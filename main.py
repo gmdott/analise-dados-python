@@ -3,6 +3,18 @@ import os
 
 csv = 'clean_final_data.csv'
 
+def graphChoose():
+
+    os.system('clear')
+    chooseGraph_User = input("Choose wich graphic do you want to display the info")
+
+    print('[1] - Plot\n[2] - Scatter\n[3] - Bar\n[4] - Stemn\n[5] - Fill Between\n[6] - Stackplot')
+
+    
+
+    return 0
+
+
 print("\n[1] - Order Date\n[2] - Quantity\n[3] - Product Name\n[4] - Unit Price\n[5] - City\n[6] - Age")
 
 chooseUser = input("\nChoose wich column you want to see: ")
@@ -14,7 +26,7 @@ if chooseUser == '1':
 
     #os.system está obsoleto, ele está sendo utilizado apenas como exemplo
     os.system('clear')
-    print(df)
+    print('\n', df,'\n')
 
 elif chooseUser == '2':
     df = pd.read_csv(csv, usecols=[
@@ -24,7 +36,7 @@ elif chooseUser == '2':
     df["Quantity"] = df["Quantity"].fillna(0).astype(int)
 
     os.system('clear')
-    print(df)
+    print('\n', df,'\n')
 
 elif chooseUser == '3':
     df = pd.read_csv(csv, usecols=[
@@ -32,4 +44,31 @@ elif chooseUser == '3':
     ], nrows=20)
 
     os.system('clear')
-    print(df)
+    print('\n', df,'\n')
+
+elif chooseUser == '4':
+    df = pd.read_csv(csv, usecols=[
+        "ProductName",
+        "UniPrice",
+    ], nrows=20)
+
+    os.system('clear')
+    print('\n', df,'\n')
+
+elif chooseUser == '5':
+    df = pd.read_csv(csv, usecols=[
+        "ProductName",
+        "City"  
+    ], nrows=20)
+
+    os.system('clear')
+    print('\n', df,'\n')
+
+elif chooseUser == '6':
+    df = pd. read_csv(csv, usecols= [
+        "ProductName",
+        "Age"
+    ], nrows=20)
+
+    os.system('clear')
+    print('\n', df,'\n')
