@@ -34,7 +34,7 @@ def graphChoose():
         #Inicia a leitura do csv com pandas
         df = pd.read_csv(csv, usecols=[
             "ProductName",
-            chooseUser], nrows=20)
+            chooseUser], nrows=50)
         df[chooseUser] = pd.to_datetime(df[chooseUser])
         #Realiza o grafico escolhido pelo usuário (plot) com o matplotlib
         df.plot(
@@ -44,7 +44,7 @@ def graphChoose():
             title = "Data de compra do pedido",
             xlabel = "Produto",
             ylabel = "Data do pedido",
-            figsize = (10, 6),
+            figsize = (14, 6),
             color = "steelblue",
             #legend = False  
         )
